@@ -1,4 +1,4 @@
-import { CollectionsPage } from 'components'
+import CollectionsPage from 'components/CollectionsPage'
 // import siteMetadata from 'siteMetadata'
 
 export default CollectionsPage
@@ -18,7 +18,7 @@ export async function getStaticProps() {
     if (!file) return
 
     return {
-      slug: slug,
+      slug: `/garden/${slug}`,
       // frontmatter: file.frontmatter,
       frontmatter: {
         ...file.frontmatter,

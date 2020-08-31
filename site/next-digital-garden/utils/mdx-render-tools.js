@@ -49,7 +49,7 @@ const getFiles = (globPath) => {
   files.forEach((filename) => {
     const mdxSource = fs.readFileSync(filename)
     const { content, data } = matter(mdxSource)
-    console.log(filename, data.date)
+
     allFiles[data.slug] = {
       frontmatter: data,
       content,

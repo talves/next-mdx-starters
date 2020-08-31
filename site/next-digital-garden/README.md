@@ -1,4 +1,4 @@
-# tony-alves-dev
+# next-digital-garden
 
 A digital garden site build with NextJS for static site hosting. Most likely this site will be hosted on Netlify.
 

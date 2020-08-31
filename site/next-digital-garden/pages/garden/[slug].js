@@ -1,4 +1,5 @@
-import { DefaultPage, Box } from 'components'
+import DefaultPage from 'components/DefaultPage'
+import Box from 'components/Box'
 
 const components = { Box }
 
@@ -15,7 +16,6 @@ export async function getStaticPaths() {
       },
     }
   })
-  console.log(JSON.stringify(paths, null, 2))
 
   return {
     paths,
