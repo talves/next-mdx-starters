@@ -1,0 +1,33 @@
+---
+draft: false
+title: Yarn workspaces list bash function
+slug: yarn-workspaces-bash-function
+date: 2020-07-16T18:20:00-08:00
+update: 2020-07-16T18:20:00-08:00
+author: talves
+description: >-
+  It really is easy to add your favicon to a site 
+  that uses Gatsby
+categories:
+  - 'javascript'
+  - 'yarn'
+  - 'notes'
+keywords:
+  - 'yarn'
+  - 'zsh'
+  - 'bash'
+garden: sapling
+image: '/images/social/yarn-workspaces-bash-function.png'
+---
+
+### Code
+
+```bash {3}
+# yw develop
+ywl () {
+  yarn workspaces --json info | jq '.data' -r | jq "[keys][0] []" -r
+}
+yw () {
+  yarn workspace $(ywl | fzf) $@
+}
+```

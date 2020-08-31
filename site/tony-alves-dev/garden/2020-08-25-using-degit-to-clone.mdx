@@ -1,0 +1,32 @@
+---
+draft: false
+title: Using degit to clone a repository
+slug: using-degit-to-clone
+date: 2020-08-25T20:05:24.286Z
+author: talves
+description: >-
+  How to use degit to clone a repository or path from GitHub to scaffold a project.
+categories:
+  - 'notes'
+keywords:
+  - 'tutorial'
+  - 'degit'
+garden: seedling
+image: '/images/social/using-degit-to-clone.png'
+---
+
+How to use [degit][degit] to clone a repository or path from GitHub to scaffold a project.
+
+### Bring in a folder
+
+```bash
+$ npx degit github:user/repo[/subdirectory] <path>
+```
+
+### Bring in a branch
+
+```bash
+$ npx degit github:user/repo#branch <path>
+```
+
+[degit]: https://github.com/Rich-Harris/degit
