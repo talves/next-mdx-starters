@@ -1,0 +1,27 @@
+---
+title: 'MDX with frontmatter and exports'
+draft: false
+slug: mdx-with-exports
+date: 2020-09-01T20:05:24.286Z
+author: talves
+description: >-
+  MDX with frontmatter and exports
+categories:
+  - 'notes'
+keywords:
+  - 'tutorial'
+  - 'degit'
+garden: seedling
+image: '/images/social/using-degit-to-clone.png'
+---
+export const somevar = "this is a test";
+export const MyDiv = ({value}) => <div>{value}</div>
+const withoutexport = "Without Export"
+
+
+
+<MyDiv value={somevar} />
+
+<div>{withoutexport}</div>
+
+<Example />

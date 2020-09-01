@@ -20,7 +20,8 @@
     "gray-matter": "^4.0.2",
     "next": "^9.5.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
