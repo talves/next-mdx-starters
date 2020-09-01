@@ -18,8 +18,9 @@ export async function getStaticProps() {
     if (!file) return
 
     return {
-      slug: `/garden/${slug}`,
-      // frontmatter: file.frontmatter,
+      slug,
+      collectionPath: '/garden',
+      /* NextJS does not allow for non stringified dates */
       frontmatter: {
         ...file.frontmatter,
         date: `${file.frontmatter.date}`,
