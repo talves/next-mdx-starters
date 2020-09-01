@@ -10,5 +10,8 @@
     "playwright-aws-lambda": "^0.6.0",
     "playwright-core": "^1.3.0",
     "plop": "^2.7.4"
+  },
+  "scripts": {
+    "build:next-digital-garden": "yarn workspace next-digital-garden build:netlify"
   }
 }
