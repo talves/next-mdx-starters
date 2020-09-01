@@ -8,6 +8,8 @@ const matter = require('gray-matter')
 const glob = require('fast-glob')
 
 const mdx = require('@mdx-js/mdx')
+const { ThemeProvider } = require('theme-ui')
+const { default: theme } = require('styles/theme')
 
 const transform = (code) =>
   babel.transform(code, {
@@ -37,7 +39,13 @@ const renderWithReact = async (mdxCode, { components } = {}) => {
     element,
   )
 
-  return renderToStaticMarkup(elementWithProvider)
+  const elementWithThemeProvider = React.createElement(
+    ThemeProvider,
+    { theme },
+    elementWithProvider,
+  )
+
+  return renderToStaticMarkup(elementWithThemeProvider)
 }
 
 const globFactory = {}
