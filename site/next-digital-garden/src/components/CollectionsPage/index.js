@@ -1,5 +1,5 @@
+import { Box } from 'theme-ui'
 import Link from 'next/link'
-import Box from 'components/Box'
 
 /*
 When routing to a dynamic route using Link or router, you will need to specify the href as the dynamic route, for example /garden/[slug] and as as the decorator for the URL, for example /garden/my-post.
