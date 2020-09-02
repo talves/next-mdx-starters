@@ -2,6 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { Box } from 'theme-ui'
 
+/*
+When routing to a dynamic route using Link or router, you will need to specify the href as the dynamic route, for example /garden/[slug] and as as the decorator for the URL, for example /garden/my-post.
+*/
+// <Link href={`${prePath}[slug]`} as={`${prePath}${slug}`} passHref>
+//   <a>{item.frontmatter.title}</a>
+// </Link>
+
 const ButtonBaseStyle = {
   appearance: 'none',
   border: 0,
@@ -29,7 +36,7 @@ const ButtonBaseStyle = {
   },
 }
 
-export const ButtonLink = ({
+export const LinkButton = ({
   text = 'Button',
   // href = '/',
   sx = {},
