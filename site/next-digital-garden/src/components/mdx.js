@@ -4,6 +4,7 @@ import CodeBlock from 'components/CodeBlock'
 import BlockQuote from 'components/BlockQuote'
 import OutsideLink from 'components/OutsideLink'
 import PreBlock from 'components/PreBlock'
+import { ButtonLink } from 'components/LinkButton'
 
 const Paragraph = ({ children, ...props }) => {
   return (
@@ -24,6 +25,7 @@ const UnorderedList = ({ children, ...props }) => {
 const components = {
   Box,
   OutsideLink,
+  ButtonLink,
   code: CodeBlock,
   blockquote: BlockQuote,
   pre: PreBlock,
