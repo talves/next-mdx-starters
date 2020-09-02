@@ -48,8 +48,6 @@ const renderWithReact = async (mdxCode, { components } = {}) => {
   return renderToStaticMarkup(elementWithThemeProvider)
 }
 
-const globFactory = {}
-
 const getFiles = (globPath) => {
   const files = glob.sync(globPath)
   const allFiles = {}
@@ -67,6 +65,25 @@ const getFiles = (globPath) => {
   return allFiles
 }
 
+/* Create object to store (cache) mdx file content and frontmatter */
+/*
+{ 
+  "glob/path/with/wildcards": {
+    {
+      "slug-1" {
+        frontmatter: { title, description, ... },
+        content: "this would be the mdx content in the file",
+    },
+      "slug-2" {
+        frontmatter: { title, description, ... },
+        content: "this would be the mdx content in the file",
+      }
+    }
+  }
+}
+*/
+const globFactory = {}
+
 const getFilesFromGlob = (globPath) => {
   const files = globFactory[globPath]
   if (files) {
@@ -79,18 +96,8 @@ const getFilesFromGlob = (globPath) => {
 
 /* returns array of slug paths for posts using a glob path */
 const getSlugsFromGlob = (globPath) => {
-  const files = glob.sync(globPath)
-  const slugs = []
-
-  files.forEach((filename) => {
-    const mdxSource = fs.readFileSync(filename)
-    const { data } = matter(mdxSource)
-    if (data.slug) {
-      slugs.push(data.slug)
-    } else {
-      console.warn(`Missing path in frontmatter of post: ${filename}`)
-    }
-  })
+  const files = getFilesFromGlob(globPath)
+  const slugs = Object.keys(files).map((slug) => slug)
 
   return slugs
 }
