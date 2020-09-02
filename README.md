@@ -5,3 +5,6 @@
 
 A digital garden site build with NextJS and MDX.
 
+Code is under the MIT license.
+
+All images and content example posts are copyright © of Tony Alves
