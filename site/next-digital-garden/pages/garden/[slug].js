@@ -1,7 +1,5 @@
 import DefaultPage from 'components/DefaultPage'
-import Box from 'components/Box'
-
-const components = { Box }
+import components from 'components/mdx'
 
 // import { renderWithReact, getFilesFromGlob } from 'utils/mdx-render-tools'
 

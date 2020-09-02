@@ -1,12 +1,5 @@
 import { Global } from '@emotion/core'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import {
-  FlexLayout,
-  Header,
-  Main as LayoutMain,
-  Container,
-  Footer,
-} from 'components/Layouts/wrappers'
 
 class MyDocument extends Document {
   /* Uncomment below if you need to change the initial props */
@@ -36,13 +29,7 @@ class MyDocument extends Document {
         />
         <Head />
         <body>
-          <FlexLayout>
-            <LayoutMain variant="styles.Layout">
-              <Container>
-                <Main />
-              </Container>
-            </LayoutMain>
-          </FlexLayout>
+          <Main />
           <NextScript />
         </body>
       </Html>
