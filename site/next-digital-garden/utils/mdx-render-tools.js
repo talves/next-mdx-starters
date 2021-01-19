@@ -21,6 +21,7 @@ const transform = (code) =>
   }).code
 
 const renderWithReact = async (mdxCode, { components } = {}) => {
+  // console.log(mdxCode)
   const jsx = await mdx(mdxCode, { skipExport: true })
   const code = transform(jsx)
   const scope = { mdx: createElement }

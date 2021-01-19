@@ -48,3 +48,21 @@ export const LinkButton = ({
     </Box>
   </Link>
 )
+
+export const OutsideLink = ({
+  description = 'Outside Link',
+  // href = '/',
+  sx = {},
+  ...props
+}) => (
+  <Link
+    {...props}
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{ padding: 20, ...sx }}
+  >
+    <Box as="button" sx={{ ...ButtonBaseStyle, ...sx }}>
+      <span>{description}</span>
+    </Box>
+  </Link>
+)
