@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build:garden": "yarn workspace next-digital-garden build:netlify",
+    "build:fbauth": "yarn workspace next-digital-garden build:netlify",
     "serve": "serve site/next-digital-garden/out"
   }
 }
