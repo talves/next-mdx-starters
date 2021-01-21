@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "firebase-react-provider": "^0.3.1",
     "next": "10.0.4",
     "react": "17.0.1",
     "react-dom": "17.0.1"
