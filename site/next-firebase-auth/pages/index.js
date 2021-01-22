@@ -6,6 +6,14 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 
 export default function Home() {
+  const user = useFirebaseUser(); // user logged out if null
+  const [name, setName] = useState(null);
+
+  useEffect(() => {
+    if (!user) return;
+    setName(user.displayName);
+  }, [user]);
+
   return (
     <div className="container">
       <Head>
