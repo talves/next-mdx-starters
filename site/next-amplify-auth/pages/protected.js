@@ -1,21 +1,16 @@
 import { withSSRContext } from "aws-amplify";
 
-/*
-This is used without redirects. A more secure way is using SSR and server side redirects.
-*/
-function Protected({ authenticated, username }) {
-  if (!authenticated) {
-    return <h1>Not authenticated</h1>;
-  }
+function Protected({ username }) {
   return <h1>Hello {username} from SSR route!</h1>;
 }
 
-export async function getServerSideProps(context) {
-  const { Auth } = withSSRContext(context);
+/*
+A more secure way is using SSR and server side redirects.
+*/
+export async function getServerSideProps({ req, res }) {
+  const { Auth } = withSSRContext({ req });
   try {
-    // Access the user session on the server
     const user = await Auth.currentAuthenticatedUser();
-    console.log("user: ", user);
     return {
       props: {
         authenticated: true,
@@ -23,12 +18,10 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (err) {
-    return {
-      props: {
-        authenticated: false,
-      },
-    };
+    res.writeHead(302, { Location: "/profile" });
+    res.end();
   }
+  return { props: {} };
 }
 
 export default Protected;
