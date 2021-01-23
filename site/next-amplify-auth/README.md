@@ -2,7 +2,7 @@
 
 `npx create-next-app next-amplify-auth`
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Follows [Nader Dabit's complete guide][dabit-tutorial] to next-js authentication using amplify.
 
 Make sure you have amplify configured for your setup and have created a unique user with correct permissions for this project to use amplify on aws. This is recommended, so the user has limited access to other areas of aws. Never use your IAM admin user for access to services on AWS for obvious security reasons.
 
@@ -38,3 +38,4 @@ yarn dev
 ```
 
 [amplify]: https://www.youtube.com/watch?v=n4DuYTzpvdE
+[dabit-tutorial]: https://dev.to/dabit3/the-complete-guide-to-next-js-authentication-2aco
