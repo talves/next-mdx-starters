@@ -1,7 +1,7 @@
 import { withSSRContext } from "aws-amplify";
 
 /*
-
+This is used without redirects. A more secure way is using SSR and server side redirects.
 */
 function Protected({ authenticated, username }) {
   if (!authenticated) {
