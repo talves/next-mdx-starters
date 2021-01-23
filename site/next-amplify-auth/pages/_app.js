@@ -22,6 +22,9 @@ export default function MyApp({ Component, pageProps }) {
         <Link href="/protected">
           <span className={linkStyle}>Protected</span>
         </Link>
+        <Link href="/protected-client-route">
+          <span className={linkStyle}>Protected client route</span>
+        </Link>
       </nav>
       <Component {...pageProps} />
     </div>
