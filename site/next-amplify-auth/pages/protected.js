@@ -1,6 +1,7 @@
 import { withSSRContext } from "aws-amplify";
 
 function Protected({ username }) {
+  if (!username) return null;
   return <h1>Hello {username} from SSR route!</h1>;
 }
 
@@ -19,8 +20,11 @@ export async function getServerSideProps({ req, res }) {
     };
   } catch (err) {
     /* This creates an error */
-    res.writeHead(302, { Location: "/profile" });
-    res.end();
+    // res.writeHead(302, { Location: "/profile" });
+    // res.end();
+    /* This is workaround for above until fixed */
+    res.setHeader("Location", "/profile");
+    res.statusCode = 302;
   }
   return { props: {} };
 }
