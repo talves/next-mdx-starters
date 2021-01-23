@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
           <span className={linkStyle}>Profile</span>
         </Link>
         <Link href="/protected">
-          <span className={linkStyle}>Protected</span>
+          <span className={linkStyle}>Protected-SSR</span>
         </Link>
         <Link href="/protected-client-route">
           <span className={linkStyle}>Protected client route</span>

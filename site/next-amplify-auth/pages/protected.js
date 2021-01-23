@@ -18,6 +18,7 @@ export async function getServerSideProps({ req, res }) {
       },
     };
   } catch (err) {
+    /* This creates an error */
     res.writeHead(302, { Location: "/profile" });
     res.end();
   }
