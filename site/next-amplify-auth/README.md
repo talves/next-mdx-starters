@@ -37,5 +37,13 @@ npm run dev
 yarn dev
 ```
 
+## Deploying our App
+
+Create the `serverless.yml` file to create our app component
+
+`npx serverless` (not serverless deploy)
+
+Note: Setup your aws cli credentials if you haven't already
+
 [amplify]: https://www.youtube.com/watch?v=n4DuYTzpvdE
 [dabit-tutorial]: https://dev.to/dabit3/the-complete-guide-to-next-js-authentication-2aco
